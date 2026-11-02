@@ -1,0 +1,15 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<!-- Safety: this meta CSP stops the dangling script below from ever running, even if someone registers its domain.
+     The engine reads response headers only, so "no CSP header" is still a planted finding. -->
+<meta http-equiv="Content-Security-Policy" content="script-src 'self' https://cdnjs.cloudflare.com">
+<style>body{font-family:system-ui,sans-serif;max-width:760px;margin:0 auto;padding:16px;color:#111;background:#fff}
+.banner{background:#fde68a;border:2px solid #b45309;padding:12px 16px;font-weight:600;border-radius:6px}
+code{background:#f3f4f6;padding:1px 4px}</style><title>Grafana</title>
+<link rel="stylesheet" href="/admin/public/build/grafana.light.css"></head><body>
+<div class="banner" role="note">Counterswarm test site. Every 'secret' here is fake and planted on purpose.</div>
+<h1>Grafana (fake login page)</h1>
+<form onsubmit="return false"><label>Email or username <input name="user"></label>
+<label>Password <input type="password" name="password"></label><button disabled>Log in</button></form>
+<script src="/admin/public/build/runtime.4f2a9c1e.js"></script>
+</body></html>

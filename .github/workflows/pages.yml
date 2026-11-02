@@ -1,0 +1,35 @@
+name: Deploy testbed to GitHub Pages
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+concurrency:
+  group: pages
+  cancel-in-progress: true
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+      # A real .git folder cannot be committed, so the fake one lives in site/dotgit and is renamed here.
+      # upload-pages-artifact excludes .git, so the tar is built by hand.
+      - name: Build artifact
+        run: |
+          cp -r site _site
+          mv _site/dotgit _site/.git
+          tar --dereference --hard-dereference -cvf "$RUNNER_TEMP/artifact.tar" -C _site .
+      - uses: actions/upload-artifact@v4
+        with:
+          name: github-pages
+          path: ${{ runner.temp }}/artifact.tar
+          retention-days: 1
+          if-no-files-found: error
+      - id: deployment
+        uses: actions/deploy-pages@v4

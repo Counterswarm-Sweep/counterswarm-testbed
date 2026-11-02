@@ -1,0 +1,5 @@
+# Counterswarm test site. Every 'secret' here is fake and planted on purpose.
+User-agent: *
+Disallow: /admin
+Disallow: /staging
+Sitemap: https://testbed.counterswarm.si/sitemap.xml

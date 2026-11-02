@@ -1,0 +1,40 @@
+{
+ "openapi": "3.0.3",
+ "info": {
+  "title": "Testbed API (fake)",
+  "version": "1.0.0",
+  "description": "Counterswarm test site. Every 'secret' here is fake and planted on purpose."
+ },
+ "servers": [
+  {
+   "url": "https://api.testbed.counterswarm.si"
+  }
+ ],
+ "paths": {
+  "/api/v1/me": {
+   "get": {
+    "summary": "Current user"
+   }
+  },
+  "/api/v1/users": {
+   "get": {
+    "summary": "List users"
+   }
+  },
+  "/api/v1/admin/users": {
+   "get": {
+    "summary": "Admin: list users"
+   }
+  },
+  "/api/v1/admin/export": {
+   "get": {
+    "summary": "Admin: export all users"
+   }
+  },
+  "/api/v1/admin/impersonate/{id}": {
+   "post": {
+    "summary": "Admin: sign in as a user"
+   }
+  }
+ }
+}

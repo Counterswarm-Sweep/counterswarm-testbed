@@ -1,0 +1,16 @@
+{
+ "applinks": {
+  "details": [
+   {
+    "appIDs": [
+     "ABCDE12345.si.counterswarm.testbed.fakeapp"
+    ],
+    "paths": [
+     "/admin/*",
+     "/invite/*",
+     "/reset-password/*"
+    ]
+   }
+  ]
+ }
+}
